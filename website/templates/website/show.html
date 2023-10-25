@@ -1,0 +1,17 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Messages{% endblock %}
+
+{% block content %}
+
+<h1>Message :</h1>
+
+    <a href="{% url 'all_messages'%}" class="btn btn-secondary">return</a>
+
+<p>-----------------------</p>
+<p>{{ message.title }}</p>
+<p>{{ message.content }}</p>
+<p>-----------------------</p>
+
+
+{% endblock %}

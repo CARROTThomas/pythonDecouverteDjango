@@ -1,0 +1,23 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Messages{% endblock %}
+
+{% block content %}
+
+<h1>coucou</h1>
+
+{% for message in messages %}
+    <p>-----------------------</p>
+    <p>Title : {{ message.title }}</p>
+    <p>Content : {{ message.content }}</p>
+    <div class="d-flex gap-1">
+        <a class="btn btn-primary" href="{% url 'show_message' message.id %}">show</a>
+        <a class="btn btn-warning" href="{% url 'update_message' message.id %}">update</a>
+        <a class="btn btn-danger" href="{% url 'delete_message' message.id %}">delete</a>
+    </div>
+
+{% endfor %}
+<p>-----------------------</p>
+
+
+{% endblock %}

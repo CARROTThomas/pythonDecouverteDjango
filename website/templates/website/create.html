@@ -1,0 +1,18 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Messages{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+    <h3>New message</h3>
+
+    <form class="form" method="post">{% csrf_token %}
+        {{ message_form.as_p }}
+        {{ form | crispy }}
+        <input class="btn btn-success" type="submit" value="Submit" />
+    </form>
+
+
+{% endblock %}
